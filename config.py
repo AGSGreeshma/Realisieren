@@ -13,7 +13,7 @@ QUOTES_BASE_URL = "https://quotes.toscrape.com/"    # Quotes listing entry point
 REQUEST_DELAY = 0.5                                 # Seconds to wait between requests
 TIMEOUT = 10                                        # Seconds before a request is abandoned
 MAX_RETRIES = 3                                     # Extra attempts after the first failure
-BACKOFF_FACTOR = 1.0                                # Retry waits: 1s, 2s, 4s
+BACKOFF_FACTOR = 1.0                                # Retry waits: 0s, 2s, 4s (urllib3 skips the first backoff)
 RETRY_STATUS_CODES = [429, 500, 502, 503, 504]      # Server-side codes worth retrying
 
 # --- Identify ourselves honestly to the servers (no personal data: this header is public) ---
