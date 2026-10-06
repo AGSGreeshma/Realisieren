@@ -1,0 +1,22 @@
+# --- Virtual environment ---
+venv/
+.venv/
+
+# --- Python caches / bytecode ---
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# --- Editors / IDEs ---
+.vscode/
+.idea/
+
+# --- Secrets ---
+.env
+
+# --- Generated output (keep the folders, ignore what the pipeline writes) ---
+output/*
+!output/.gitkeep
+logs/*
+!logs/.gitkeep
