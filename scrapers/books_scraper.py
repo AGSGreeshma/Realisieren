@@ -92,18 +92,15 @@ class BooksScraper:
                 )
                 break
 
-            cards = soup.select(SEL_BOOK_CARD)
+            page_records, cards_found = self.parse_listing(soup, page_url)
             self.stats["pages_scraped"] += 1
-            logger.info("Books page %s: %s (%s items)", page_number, page_url, len(cards))
+            logger.info("Books page %s: %s (%s items)", page_number, page_url, cards_found)
 
-            if not cards:
+            if not cards_found:
                 self.stats["pages_empty"] += 1
                 logger.warning("Books page %s had no %r elements - check the selector", page_number, SEL_BOOK_CARD)
 
-            for card in cards:
-                record = self._parse_card(card, page_url)
-                if record is None:
-                    continue  # already logged; skip just this book
+            for record in page_records:
                 if not skip_details:
                     self._add_detail_fields(record)
                 records.append(record)
@@ -115,6 +112,35 @@ class BooksScraper:
         return records
 
     # ----------------------------------------------------------------- parsing
+
+    def parse_listing(
+        self,
+        soup: BeautifulSoup,
+        page_url: str,
+    ) -> tuple[list[dict[str, Any]], int]:
+        """Read every book on one listing page. Pure parsing, no network.
+
+        Returns (records, cards_found). The count is returned separately so the
+        caller can tell "this page had no book cards at all" (a broken
+        selector) apart from "the cards were there but none could be parsed".
+        """
+        cards = soup.select(SEL_BOOK_CARD)
+        records = [
+            record
+            for record in (self._parse_card(card, page_url) for card in cards)
+            if record is not None
+        ]
+        return records, len(cards)
+
+    @staticmethod
+    def parse_detail(soup: BeautifulSoup) -> dict[str, Any]:
+        """Read the three fields that only exist on a detail page. No network."""
+        return {
+            "category": select_text(soup, SEL_CATEGORY),
+            # None here is normal, not an error: some books have no description
+            "description": select_text(soup, SEL_DESCRIPTION),
+            "availability_text": select_text(soup, SEL_AVAILABILITY),
+        }
 
     def _parse_card(self, card: Tag, page_url: str) -> dict[str, Any] | None:
         """Read one book card into a raw dict, or return None if it cannot be read."""
@@ -168,10 +194,7 @@ class BooksScraper:
             return
 
         try:
-            record["category"] = select_text(soup, SEL_CATEGORY)
-            # None here is normal, not an error: some books have no description
-            record["description"] = select_text(soup, SEL_DESCRIPTION)
-            record["availability_text"] = select_text(soup, SEL_AVAILABILITY)
+            record.update(self.parse_detail(soup))
         # Deliberately broad: a surprise here must not lose the listing data we already have
         except Exception as exc:
             self.stats["detail_pages_failed"] += 1

@@ -84,11 +84,11 @@ class QuotesScraper:
                 )
                 break
 
-            blocks = soup.select(SEL_QUOTE_BLOCK)
+            page_records, blocks_found = self.parse_listing(soup, page_url)
             self.stats["pages_scraped"] += 1
-            logger.info("Quotes page %s: %s (%s items)", page_number, page_url, len(blocks))
+            logger.info("Quotes page %s: %s (%s items)", page_number, page_url, blocks_found)
 
-            if not blocks:
+            if not blocks_found:
                 self.stats["pages_empty"] += 1
                 logger.warning(
                     "Quotes page %s had no %r elements - check the selector",
@@ -96,10 +96,7 @@ class QuotesScraper:
                     SEL_QUOTE_BLOCK,
                 )
 
-            for block in blocks:
-                record = self._parse_quote(block, page_url)
-                if record is None:
-                    continue  # already logged; skip just this quote
+            for record in page_records:
                 records.append(record)
                 self.stats["records_collected"] += 1
 
@@ -109,6 +106,25 @@ class QuotesScraper:
         return records
 
     # ----------------------------------------------------------------- parsing
+
+    def parse_listing(
+        self,
+        soup: BeautifulSoup,
+        page_url: str,
+    ) -> tuple[list[dict[str, Any]], int]:
+        """Read every quote on one listing page. Pure parsing, no network.
+
+        Returns (records, blocks_found), for the same reason as the Books
+        scraper: "no quote blocks at all" and "blocks present but unparseable"
+        are different problems.
+        """
+        blocks = soup.select(SEL_QUOTE_BLOCK)
+        records = [
+            record
+            for record in (self._parse_quote(block, page_url) for block in blocks)
+            if record is not None
+        ]
+        return records, len(blocks)
 
     def _parse_quote(self, block: Tag, page_url: str) -> dict[str, Any] | None:
         """Read one quote block into a raw dict, or None if it cannot be read."""
