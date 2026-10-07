@@ -1,6 +1,7 @@
-"""Throwaway Phase 7 check: verify output/ independently of the pipeline.
+"""Verify output/ independently of the pipeline that produced it.
 
-Run with:  python verify_output.py
+Run with:  python scripts/verify_output.py
+           python scripts/verify_output.py --no-spot-check   (fully offline)
 
 Deliberately does NOT import the pipeline's own counting code - it re-reads the
 CSV with the stdlib csv module and re-derives every number, so a bug in main.py
@@ -8,6 +9,14 @@ cannot hide by agreeing with itself.
 
 Then re-fetches 5 random rows (fixed seed) from the live sites and compares.
 """
+
+# Running this as "python scripts/<name>.py" puts scripts/ on the import path,
+# not the project root, so "import config" would fail. Add the project root.
+import pathlib
+import sys
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
+
 
 import csv
 import json
@@ -275,6 +284,10 @@ def live_quote(soup: BeautifulSoup, row: dict) -> dict:
 
 
 def main() -> int:
+    # --no-spot-check skips the live requests, so the whole verification can
+    # run offline (useful for a reviewer with no network, or in CI).
+    live = "--no-spot-check" not in sys.argv
+
     rows, rejected, summary = load()
 
     print("=" * 108)
@@ -289,7 +302,10 @@ def main() -> int:
     check_types(rows)
     check_encoding(rows)
     check_duplicates(rows, summary)
-    spot_check(rows)
+    if live:
+        spot_check(rows)
+    else:
+        print("\n6. LIVE SPOT CHECK - skipped (--no-spot-check)")
 
     print()
     print("=" * 108)

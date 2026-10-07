@@ -1,6 +1,6 @@
-"""Throwaway Phase 6 check: prove one failing source never stops the other.
+"""Demonstrate that one failing source never stops the other.
 
-Run with:  python try_failure.py
+Run with:  python scripts/try_failure.py
 
 Monkeypatches at runtime so no pipeline code is edited. Three scenarios:
   1. Books pointed at a 404 URL  -> graceful failure, pages_failed=1
@@ -8,6 +8,14 @@ Monkeypatches at runtime so no pipeline code is edited. Three scenarios:
   3. Both sources raise           -> exit code 1
 In 1 and 2 the Quotes source must still finish and the outputs must still be written.
 """
+
+# Running this as "python scripts/<name>.py" puts scripts/ on the import path,
+# not the project root, so "import config" would fail. Add the project root.
+import pathlib
+import sys
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
+
 
 import json
 
@@ -19,7 +27,8 @@ from scrapers.quotes_scraper import QuotesScraper
 
 def report(label: str, exit_code: int) -> None:
     """Print what the summary recorded for this scenario."""
-    with open("output/summary_report.json", encoding="utf-8") as handle:
+    # config's absolute path, so the script does not depend on the working directory
+    with config.SUMMARY_JSON.open(encoding="utf-8") as handle:
         summary = json.load(handle)
 
     print(f"\n  exit code              : {exit_code}")

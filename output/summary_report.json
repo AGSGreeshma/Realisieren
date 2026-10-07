@@ -1,0 +1,139 @@
+{
+  "run": {
+    "started_at": "2026-10-06T22:02:41Z",
+    "finished_at": "2026-10-06T22:21:32Z",
+    "duration_seconds": 1131.25,
+    "cli_options": {
+      "source": "all",
+      "max_pages": null,
+      "delay": 0.5,
+      "skip_details": false,
+      "drop_duplicates": false
+    },
+    "failed_sources": []
+  },
+  "per_source": {
+    "Books to Scrape": {
+      "pages_scraped": 50,
+      "pages_failed": 0,
+      "pages_empty": 0,
+      "requests_made": 1050,
+      "requests_failed": 0,
+      "detail_pages_failed": 0,
+      "collected": 1000,
+      "transform_failed": 0,
+      "after_cleaning": 1000,
+      "rejected": 0,
+      "duplicates": 1,
+      "final_unique": 999,
+      "error": null
+    },
+    "Quotes to Scrape": {
+      "pages_scraped": 10,
+      "pages_failed": 0,
+      "pages_empty": 0,
+      "requests_made": 10,
+      "requests_failed": 0,
+      "detail_pages_failed": 0,
+      "collected": 100,
+      "transform_failed": 0,
+      "after_cleaning": 100,
+      "rejected": 0,
+      "duplicates": 0,
+      "final_unique": 100,
+      "error": null
+    }
+  },
+  "rejected_by_reason": {},
+  "duplicates": {
+    "detected": 1,
+    "action": "flagged",
+    "groups": [
+      {
+        "title": "The Star-Touched Queen",
+        "source": "Books to Scrape",
+        "record_id": "3fa1ee61c6629711cd9a7af9a9f13a87bdb249c51954517aeed12d935d29df07",
+        "copies": 2,
+        "source_urls": [
+          "https://books.toscrape.com/catalogue/the-star-touched-queen_764/index.html",
+          "https://books.toscrape.com/catalogue/the-star-touched-queen_642/index.html"
+        ]
+      }
+    ]
+  },
+  "csv_rows": 1100,
+  "final_record_count": 1099,
+  "data_quality": {
+    "empty_values_per_column": {
+      "all": {
+        "record_id": 0,
+        "source": 0,
+        "source_url": 0,
+        "name_or_title": 0,
+        "category": 100,
+        "price": 100,
+        "currency": 100,
+        "availability": 100,
+        "rating": 100,
+        "author": 1000,
+        "author_url": 1000,
+        "tags": 1003,
+        "description": 102,
+        "scraped_at": 0,
+        "is_duplicate": 0
+      },
+      "Books to Scrape": {
+        "record_id": 0,
+        "source": 0,
+        "source_url": 0,
+        "name_or_title": 0,
+        "category": 0,
+        "price": 0,
+        "currency": 0,
+        "availability": 0,
+        "rating": 0,
+        "author": 1000,
+        "author_url": 1000,
+        "tags": 1000,
+        "description": 2,
+        "scraped_at": 0,
+        "is_duplicate": 0
+      },
+      "Quotes to Scrape": {
+        "record_id": 0,
+        "source": 0,
+        "source_url": 0,
+        "name_or_title": 0,
+        "category": 100,
+        "price": 100,
+        "currency": 100,
+        "availability": 100,
+        "rating": 100,
+        "author": 0,
+        "author_url": 0,
+        "tags": 3,
+        "description": 100,
+        "scraped_at": 0,
+        "is_duplicate": 0
+      }
+    }
+  },
+  "reconciliation": {
+    "collected_minus_transform_failed_minus_rejected": {
+      "formula": "1100 - 0 - 0 = 1100",
+      "after_validation": 1100,
+      "ok": true
+    },
+    "after_validation_minus_duplicates": {
+      "formula": "1100 - 1 = 1099",
+      "final_unique": 1099,
+      "ok": true
+    },
+    "csv_rows_match_mode": {
+      "mode": "flagged",
+      "formula": "csv_rows 1100 == expected 1100",
+      "ok": true
+    },
+    "ok": true
+  }
+}

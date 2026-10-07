@@ -1,12 +1,20 @@
-"""Throwaway Phase 2 check for the Books scraper. Not part of the final pipeline.
+"""Manual check of the Books scraper against the live site.
 
-Run with:  python try_books.py
+Run with:  python scripts/try_books.py
 
 Shows three things:
   1. a 2-page run returns 40 raw books with full titles
   2. a broken URL is logged and returns cleanly instead of crashing
   3. how long a full run would take
 """
+
+# Running this as "python scripts/<name>.py" puts scripts/ on the import path,
+# not the project root, so "import config" would fail. Add the project root.
+import pathlib
+import sys
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
+
 
 import logging
 import sys

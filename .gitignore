@@ -18,8 +18,14 @@ __pycache__/
 # --- Development-only raw scrape cache (never part of the pipeline) ---
 data/
 
-# --- Generated output (keep the folders, ignore what the pipeline writes) ---
+# --- Generated output ---
+# Ignore everything the pipeline writes, then allow back the three result files
+# and the run log, because they are part of the submission.
 output/*
 !output/.gitkeep
+!output/final_dataset.csv
+!output/rejected_records.csv
+!output/summary_report.json
 logs/*
 !logs/.gitkeep
+!logs/scraper.log

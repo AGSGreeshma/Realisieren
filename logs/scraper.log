@@ -1,0 +1,83 @@
+2026-10-07 03:32:41 | INFO    | main                     | ======================================================================
+2026-10-07 03:32:41 | INFO    | main                     | RUN START 2026-10-06T22:02:41Z
+2026-10-07 03:32:41 | INFO    | main                     | options: {'source': 'all', 'max_pages': None, 'delay': 0.5, 'skip_details': False, 'drop_duplicates': False}
+2026-10-07 03:32:41 | INFO    | main                     | ======================================================================
+2026-10-07 03:32:41 | INFO    | main                     | --- Books to Scrape ---
+2026-10-07 03:32:43 | INFO    | scrapers.books_scraper   | Books page 1: https://books.toscrape.com/ (20 items)
+2026-10-07 03:33:04 | INFO    | scrapers.books_scraper   | Books page 2: https://books.toscrape.com/catalogue/page-2.html (20 items)
+2026-10-07 03:33:26 | INFO    | scrapers.books_scraper   | Books page 3: https://books.toscrape.com/catalogue/page-3.html (20 items)
+2026-10-07 03:33:48 | INFO    | scrapers.books_scraper   | Books page 4: https://books.toscrape.com/catalogue/page-4.html (20 items)
+2026-10-07 03:34:12 | INFO    | scrapers.books_scraper   | Books page 5: https://books.toscrape.com/catalogue/page-5.html (20 items)
+2026-10-07 03:34:36 | INFO    | scrapers.books_scraper   | Books page 6: https://books.toscrape.com/catalogue/page-6.html (20 items)
+2026-10-07 03:35:00 | INFO    | scrapers.books_scraper   | Books page 7: https://books.toscrape.com/catalogue/page-7.html (20 items)
+2026-10-07 03:35:23 | INFO    | scrapers.books_scraper   | Books page 8: https://books.toscrape.com/catalogue/page-8.html (20 items)
+2026-10-07 03:35:46 | INFO    | scrapers.books_scraper   | Books page 9: https://books.toscrape.com/catalogue/page-9.html (20 items)
+2026-10-07 03:36:10 | INFO    | scrapers.books_scraper   | Books page 10: https://books.toscrape.com/catalogue/page-10.html (20 items)
+2026-10-07 03:36:32 | INFO    | scrapers.books_scraper   | Books page 11: https://books.toscrape.com/catalogue/page-11.html (20 items)
+2026-10-07 03:36:54 | INFO    | scrapers.books_scraper   | Books page 12: https://books.toscrape.com/catalogue/page-12.html (20 items)
+2026-10-07 03:37:16 | INFO    | scrapers.books_scraper   | Books page 13: https://books.toscrape.com/catalogue/page-13.html (20 items)
+2026-10-07 03:37:38 | INFO    | scrapers.books_scraper   | Books page 14: https://books.toscrape.com/catalogue/page-14.html (20 items)
+2026-10-07 03:38:00 | INFO    | scrapers.books_scraper   | Books page 15: https://books.toscrape.com/catalogue/page-15.html (20 items)
+2026-10-07 03:38:22 | INFO    | scrapers.books_scraper   | Books page 16: https://books.toscrape.com/catalogue/page-16.html (20 items)
+2026-10-07 03:38:43 | INFO    | scrapers.books_scraper   | Books page 17: https://books.toscrape.com/catalogue/page-17.html (20 items)
+2026-10-07 03:39:05 | INFO    | scrapers.books_scraper   | Books page 18: https://books.toscrape.com/catalogue/page-18.html (20 items)
+2026-10-07 03:39:30 | INFO    | scrapers.books_scraper   | Books page 19: https://books.toscrape.com/catalogue/page-19.html (20 items)
+2026-10-07 03:39:52 | INFO    | scrapers.books_scraper   | Books page 20: https://books.toscrape.com/catalogue/page-20.html (20 items)
+2026-10-07 03:40:13 | INFO    | scrapers.books_scraper   | Books page 21: https://books.toscrape.com/catalogue/page-21.html (20 items)
+2026-10-07 03:40:35 | INFO    | scrapers.books_scraper   | Books page 22: https://books.toscrape.com/catalogue/page-22.html (20 items)
+2026-10-07 03:40:56 | INFO    | scrapers.books_scraper   | Books page 23: https://books.toscrape.com/catalogue/page-23.html (20 items)
+2026-10-07 03:41:18 | INFO    | scrapers.books_scraper   | Books page 24: https://books.toscrape.com/catalogue/page-24.html (20 items)
+2026-10-07 03:41:40 | INFO    | scrapers.books_scraper   | Books page 25: https://books.toscrape.com/catalogue/page-25.html (20 items)
+2026-10-07 03:42:01 | INFO    | scrapers.books_scraper   | Books page 26: https://books.toscrape.com/catalogue/page-26.html (20 items)
+2026-10-07 03:42:22 | INFO    | scrapers.books_scraper   | Books page 27: https://books.toscrape.com/catalogue/page-27.html (20 items)
+2026-10-07 03:42:43 | INFO    | scrapers.books_scraper   | Books page 28: https://books.toscrape.com/catalogue/page-28.html (20 items)
+2026-10-07 03:43:03 | INFO    | scrapers.books_scraper   | Books page 29: https://books.toscrape.com/catalogue/page-29.html (20 items)
+2026-10-07 03:43:23 | INFO    | scrapers.books_scraper   | Books page 30: https://books.toscrape.com/catalogue/page-30.html (20 items)
+2026-10-07 03:43:43 | INFO    | scrapers.books_scraper   | Books page 31: https://books.toscrape.com/catalogue/page-31.html (20 items)
+2026-10-07 03:44:04 | INFO    | scrapers.books_scraper   | Books page 32: https://books.toscrape.com/catalogue/page-32.html (20 items)
+2026-10-07 03:44:27 | INFO    | scrapers.books_scraper   | Books page 33: https://books.toscrape.com/catalogue/page-33.html (20 items)
+2026-10-07 03:44:50 | INFO    | scrapers.books_scraper   | Books page 34: https://books.toscrape.com/catalogue/page-34.html (20 items)
+2026-10-07 03:45:13 | INFO    | scrapers.books_scraper   | Books page 35: https://books.toscrape.com/catalogue/page-35.html (20 items)
+2026-10-07 03:45:35 | INFO    | scrapers.books_scraper   | Books page 36: https://books.toscrape.com/catalogue/page-36.html (20 items)
+2026-10-07 03:45:57 | INFO    | scrapers.books_scraper   | Books page 37: https://books.toscrape.com/catalogue/page-37.html (20 items)
+2026-10-07 03:46:20 | INFO    | scrapers.books_scraper   | Books page 38: https://books.toscrape.com/catalogue/page-38.html (20 items)
+2026-10-07 03:46:42 | INFO    | scrapers.books_scraper   | Books page 39: https://books.toscrape.com/catalogue/page-39.html (20 items)
+2026-10-07 03:47:05 | INFO    | scrapers.books_scraper   | Books page 40: https://books.toscrape.com/catalogue/page-40.html (20 items)
+2026-10-07 03:47:29 | INFO    | scrapers.books_scraper   | Books page 41: https://books.toscrape.com/catalogue/page-41.html (20 items)
+2026-10-07 03:47:53 | INFO    | scrapers.books_scraper   | Books page 42: https://books.toscrape.com/catalogue/page-42.html (20 items)
+2026-10-07 03:48:15 | INFO    | scrapers.books_scraper   | Books page 43: https://books.toscrape.com/catalogue/page-43.html (20 items)
+2026-10-07 03:48:38 | INFO    | scrapers.books_scraper   | Books page 44: https://books.toscrape.com/catalogue/page-44.html (20 items)
+2026-10-07 03:49:01 | INFO    | scrapers.books_scraper   | Books page 45: https://books.toscrape.com/catalogue/page-45.html (20 items)
+2026-10-07 03:49:23 | INFO    | scrapers.books_scraper   | Books page 46: https://books.toscrape.com/catalogue/page-46.html (20 items)
+2026-10-07 03:49:47 | INFO    | scrapers.books_scraper   | Books page 47: https://books.toscrape.com/catalogue/page-47.html (20 items)
+2026-10-07 03:50:12 | INFO    | scrapers.books_scraper   | Books page 48: https://books.toscrape.com/catalogue/page-48.html (20 items)
+2026-10-07 03:50:36 | INFO    | scrapers.books_scraper   | Books page 49: https://books.toscrape.com/catalogue/page-49.html (20 items)
+2026-10-07 03:51:00 | INFO    | scrapers.books_scraper   | Books page 50: https://books.toscrape.com/catalogue/page-50.html (20 items)
+2026-10-07 03:51:22 | INFO    | scrapers.books_scraper   | No next link on https://books.toscrape.com/catalogue/page-50.html - Books pagination finished
+2026-10-07 03:51:22 | INFO    | scrapers.books_scraper   | Books finished: 1000 record(s), stats={'pages_scraped': 50, 'pages_failed': 0, 'pages_empty': 0, 'records_collected': 1000, 'detail_pages_failed': 0}
+2026-10-07 03:51:22 | INFO    | main                     | Books to Scrape: collected=1000 after_cleaning=1000 valid=1000 rejected=0
+2026-10-07 03:51:22 | INFO    | main                     | --- Quotes to Scrape ---
+2026-10-07 03:51:24 | INFO    | scrapers.quotes_scraper  | Quotes page 1: https://quotes.toscrape.com/ (10 items)
+2026-10-07 03:51:25 | INFO    | scrapers.quotes_scraper  | Quotes page 2: https://quotes.toscrape.com/page/2/ (10 items)
+2026-10-07 03:51:26 | INFO    | scrapers.quotes_scraper  | Quotes page 3: https://quotes.toscrape.com/page/3/ (10 items)
+2026-10-07 03:51:27 | INFO    | scrapers.quotes_scraper  | Quotes page 4: https://quotes.toscrape.com/page/4/ (10 items)
+2026-10-07 03:51:28 | INFO    | scrapers.quotes_scraper  | Quotes page 5: https://quotes.toscrape.com/page/5/ (10 items)
+2026-10-07 03:51:28 | INFO    | scrapers.quotes_scraper  | Quotes page 6: https://quotes.toscrape.com/page/6/ (10 items)
+2026-10-07 03:51:29 | INFO    | scrapers.quotes_scraper  | Quotes page 7: https://quotes.toscrape.com/page/7/ (10 items)
+2026-10-07 03:51:30 | INFO    | scrapers.quotes_scraper  | Quotes page 8: https://quotes.toscrape.com/page/8/ (10 items)
+2026-10-07 03:51:31 | INFO    | scrapers.quotes_scraper  | Quotes page 9: https://quotes.toscrape.com/page/9/ (10 items)
+2026-10-07 03:51:32 | INFO    | scrapers.quotes_scraper  | Quotes page 10: https://quotes.toscrape.com/page/10/ (10 items)
+2026-10-07 03:51:32 | INFO    | scrapers.quotes_scraper  | No next link on https://quotes.toscrape.com/page/10/ - Quotes pagination finished
+2026-10-07 03:51:32 | INFO    | scrapers.quotes_scraper  | Quotes finished: 100 record(s), stats={'pages_scraped': 10, 'pages_failed': 0, 'pages_empty': 0, 'records_collected': 100, 'quotes_without_tags': 3}
+2026-10-07 03:51:32 | INFO    | main                     | Quotes to Scrape: collected=100 after_cleaning=100 valid=100 rejected=0
+2026-10-07 03:51:32 | INFO    | main                     | --- deduplication ---
+2026-10-07 03:51:32 | INFO    | processing.deduplication | Duplicate: 'The Star-Touched Queen' (https://books.toscrape.com/catalogue/the-star-touched-queen_642/index.html) duplicates 'The Star-Touched Queen' (https://books.toscrape.com/catalogue/the-star-touched-queen_764/index.html)
+2026-10-07 03:51:32 | INFO    | processing.deduplication | Duplicate detection: 1 duplicate(s) among 1100 record(s), 1099 unique
+2026-10-07 03:51:32 | INFO    | main                     | --- outputs ---
+2026-10-07 03:51:32 | INFO    | main                     | Wrote 1100 row(s) to C:\Users\agsgr\OneDrive\Desktop\AI PROJ\books_quotes_scapper\scraping_assignment\output\final_dataset.csv
+2026-10-07 03:51:32 | INFO    | main                     | Wrote 0 rejected row(s) to C:\Users\agsgr\OneDrive\Desktop\AI PROJ\books_quotes_scapper\scraping_assignment\output\rejected_records.csv
+2026-10-07 03:51:32 | INFO    | main                     | Wrote C:\Users\agsgr\OneDrive\Desktop\AI PROJ\books_quotes_scapper\scraping_assignment\output\summary_report.json
+2026-10-07 03:51:32 | INFO    | main                     | ======================================================================
+2026-10-07 03:51:32 | INFO    | main                     | RUN END   duration=1131.2s (18.9 min)
+2026-10-07 03:51:32 | INFO    | main                     | collected=1100 rejected=0 duplicates=1 csv_rows=1100 final_unique=1099 reconciliation_ok=True
+2026-10-07 03:51:32 | INFO    | main                     | ======================================================================
